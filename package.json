@@ -7,7 +7,7 @@
         "@gooddata/react-components": "7.1.0-alpha-bertold8-ine-one-4093-sdk-export-2019-10-01T14-57-58-127Z",
         "classnames": "^2.2.6",
         "formik": "^1.5.7",
-        "lodash": "^4.17.11",
+        "lodash": "^4.17.13",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "react-helmet": "^5.2.1",

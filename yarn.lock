@@ -987,10 +987,10 @@
   resolved "https://registry.yarnpkg.com/@gooddata/numberjs/-/numberjs-3.2.2.tgz#4164b4d7d39385ed63cea7ad0ed53b4d7dbfd276"
   integrity sha512-KJpzlPmDNEjALb1gVN99mWNWN7ILIeAVn0SxT/cFUgtGxtXOHolZnXDsakUtdeJTg2O6u93CZqcOSwsQ981fUA==
 
-"@gooddata/react-components@7.1.0-alpha-bertold8-ine-one-4093-sdk-export-2019-10-01T14-57-58-127Z":
-  version "7.1.0-alpha-bertold8-ine-one-4093-sdk-export-2019-10-01T14-57-58-127Z"
-  resolved "https://registry.yarnpkg.com/@gooddata/react-components/-/react-components-7.1.0-alpha-bertold8-ine-one-4093-sdk-export-2019-10-01T14-57-58-127Z.tgz#23d18d6bb6b9342cfba04cc08dcc6d9adf3a02ab"
-  integrity sha512-jq9REXWOU6G4Jmdk1vkxUuNdQygmXwt5iIPSDxbklkkkvU7W14+f7S3/tiutyAc2rEFY8oC+2cExtJkgtdUoPA==
+"@gooddata/react-components@^7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@gooddata/react-components/-/react-components-7.1.1.tgz#a1da084f0976b803c7f678b0ed54a0644fcb472a"
+  integrity sha512-EK+hYYzVKhxmkoWYa90doiOjm9QSvqst7kCt5olzTUZcwshyux6rnNU4qHj2zAl6To232I0YAKzCWtplA07bMQ==
   dependencies:
     "@gooddata/gooddata-js" "^11.14.2"
     "@gooddata/goodstrap" "^63.0.3"

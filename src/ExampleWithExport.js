@@ -4,7 +4,7 @@ import React from "react";
 import get from "lodash/get";
 import ExportDialog from "@gooddata/goodstrap/lib/Dialog/ExportDialog";
 import PropTypes from "prop-types";
-
+const backendUrlForInfo = "https://zebroids.intgdc.com";
 const DOWNLOADER_ID = "downloader";
 
 export class ExampleWithExport extends React.Component {
@@ -48,7 +48,7 @@ export class ExampleWithExport extends React.Component {
             anchor.id = DOWNLOADER_ID;
             document.body.appendChild(anchor);
         }
-        anchor.href = uri;
+        anchor.href = backendUrlForInfo + uri;
         anchor.download = uri;
         anchor.click();
     };

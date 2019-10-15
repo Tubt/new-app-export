@@ -26,9 +26,6 @@ const Home = () => {
             <div style={{ height: 400 }}>
                 <Visualization {...project} onExportReady={onExportReady} uri={visUriChart} />
             </div>
-            <div style={{ height: 400 }}>
-                <Visualization {...project} onExportReady={onExportReady} uri={visUriTable} />
-            </div>
             {exportState.data !== null ? (
                 <a download={exportState.data} href={exportState.data}>
                     Download Export

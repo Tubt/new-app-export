@@ -19,7 +19,6 @@ const Home = () => {
             });
     };
 
-    const visUriChart = `/gdc/md/${constants.projectId}/obj/75548`;
     const visUriTable = `/gdc/md/${constants.projectId}/obj/75549`;
     return (
         <Page>

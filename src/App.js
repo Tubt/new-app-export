@@ -3,8 +3,9 @@ import "@gooddata/react-components/styles/css/main.css";
 import { Visualization } from "@gooddata/react-components";
 import { factory as sdkFactory } from "@gooddata/gooddata-js";
 import "./App.css";
+import ExampleWithExport from "./ExampleWithExport";
 
-const DOWNLOADER_ID = "downloader";
+//const DOWNLOADER_ID = "downloader";
 
 class App extends Component {
     constructor(props) {
@@ -16,62 +17,65 @@ class App extends Component {
         this.visId = "75548"; // this needs to be some chart visualization NOT table!!!
         // TODO once domain where this app is deployed is enabled for CORS on whitelabeled domain remove any PROXY settings
 
-        this.doExport = this.doExport.bind(this);
+        // this.doExport = this.doExport.bind(this);
     }
 
-    onExportReady = exportResult => {
-        this.exportResult = exportResult;
-    };
+    // onExportReady = exportResult => {
+    //   this.exportResult = exportResult;
+    // };
 
-    downloadFile = uri => {
-        let anchor = document.getElementById(DOWNLOADER_ID);
-        if (!anchor) {
-            anchor = document.createElement("a");
-            anchor.id = DOWNLOADER_ID;
-            document.body.appendChild(anchor);
-        }
-        anchor.href = uri;
-        anchor.download = uri;
-        anchor.click();
-    };
+    // downloadFile = uri => {
+    //   let anchor = document.getElementById(DOWNLOADER_ID);
+    //   if (!anchor) {
+    //       anchor = document.createElement("a");
+    //       anchor.id = DOWNLOADER_ID;
+    //       document.body.appendChild(anchor);
+    //   }
+    //   anchor.href = uri;
+    //   anchor.download = uri;
+    //   anchor.click();
+    // };
 
-    exportToCSV = () => {
-        this.doExport({
-            // format: "csv"
-        });
-    };
+    // exportToCSV = () => {
+    //     this.doExport({format: "csv" });
+    // };
 
-    async doExport(exportConfig) {
-        try {
-            const result = await this.exportResult(exportConfig);
-            this.setState({ errorMessage: null });
-            this.downloadFile(result.uri);
-        } catch (error) {
-            // error handling
-            console.error(error);
-        }
-    }
+    // async doExport(exportConfig) {
+    //   try {
+    //       const result = await this.exportResult(exportConfig);
+    //       this.setState({ errorMessage: null });
+    //       this.downloadFile(result.uri);
+    //   } catch (error) {
+    //       // error handling
+    //       console.error(error);
+    //   }
+    // }
 
     render() {
         return (
             <div style={{ height: 367 }}>
-                <div className="App">
-                    <header className="App-header">
-                        <div style={{ width: 600, height: 800 }}>
-                            <Visualization
-                                projectId={this.projectId}
-                                uri={`/gdc/md/${this.projectId}/obj/${this.visId}`}
-                                sdk={this.sdk}
-                                onExportReady={this.onExportReady}
-                            />
+                <ExampleWithExport>
+                    {onExportReady => (
+                        <div className="App">
+                            <header className="App-header">
+                                <div style={{ width: 600, height: 800 }}>
+                                    <Visualization
+                                        projectId={this.projectId}
+                                        uri={`/gdc/md/${this.projectId}/obj/${this.visId}`}
+                                        sdk={this.sdk}
+                                        onExportReady={onExportReady}
+                                    />
+                                </div>
+                            </header>
                         </div>
-                    </header>
-                </div>
-                <div style={{ marginTop: 15 }}>
-                    <button className="gd-button gd-button-secondary" onClick={this.exportToCSV}>
-                        Export CSV
-                    </button>
-                </div>
+                    )}
+                </ExampleWithExport>
+                {/* <div style={{ marginTop: 15 }}>
+                <button className="gd-button gd-button-secondary" onClick={this.exportToCSV}>
+                    Export CSV
+                </button>
+
+            </div> */}
             </div>
         );
     }

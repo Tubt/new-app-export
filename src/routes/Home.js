@@ -11,7 +11,7 @@ const Home = () => {
     const onExportReady = currentGetExportResult => {
         currentGetExportResult({})
             .then(result => {
-                setExportState({ error: null, isLoading: false, data: result.uri });
+                setExportState({ format: "CSV", error: null, isLoading: false, data: result.uri });
             })
             .catch(error => {
                 console.error(error);
@@ -19,11 +19,11 @@ const Home = () => {
             });
     };
 
-    const visUriTable = `/gdc/md/${constants.projectId}/obj/75549`;
+    const visUri = `/gdc/md/${constants.projectId}/obj/75548`;
     return (
         <Page>
             <div style={{ height: 400 }}>
-                <Visualization {...project} onExportReady={onExportReady} uri={visUriTable} />
+                <Visualization {...project} onExportReady={onExportReady} uri={visUri} />
             </div>
             {exportState.data !== null ? (
                 <a download={exportState.data} href={exportState.data}>

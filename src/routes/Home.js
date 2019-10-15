@@ -24,7 +24,7 @@ const Home = () => {
     return (
         <Page>
             <div style={{ height: 400 }}>
-                <Visualization {...project} onExportReady={onExportReady} uri={visUriChart} />
+                <Visualization {...project} onExportReady={onExportReady} uri={visUriTable} />
             </div>
             {exportState.data !== null ? (
                 <a download={exportState.data} href={exportState.data}>

@@ -66,6 +66,26 @@ class App extends Component {
                                         onExportReady={onExportReady}
                                     />
                                 </div>
+                                <div style={{ height: 500 }}>
+                                    <PivotTable
+                                        measures={[
+                                            Model.measure("alUEwmBtbwSh")
+                                                .localIdentifier("m_0")
+                                                .format(
+                                                    "30000000][color=2190c0]█████ #,##0; [>=25000000][color=2190c0]████░ #,##0; [>=10000000][color=2190c0]███░░ #,##0; [>=9000000][color=2190c0]██░░░ #,##0; [>=0][color=2190c0]█░░░░ #,##0; [=Null] No data;",
+                                                ),
+                                        ]}
+                                        rows={[
+                                            Model.attribute("label.owner.department").localIdentifier("va_2"),
+                                            Model.attribute("label.owner.id.name").localIdentifier("va_4"),
+                                            Model.attribute("label.product.id.name").localIdentifier("va_5"),
+                                        ]}
+                                        columns={[
+                                            Model.attribute("label.owner.department").localIdentifier("va_3"),
+                                        ]}
+                                        projectId="ltn06hvt07uko2r87itmnoaibgzc0mkn"
+                                    />
+                                </div>
                             </header>
                         </div>
                     )}

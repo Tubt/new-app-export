@@ -12,7 +12,7 @@ class App extends Component {
         const whiteLabeledDomain = "zebroids.intgdc.com";
         this.sdk = sdkFactory({ domain: whiteLabeledDomain }); // this needs to be provided as a prop to the Visualization component in render method
         this.projectId = "ltn06hvt07uko2r87itmnoaibgzc0mkn"; // this needs to be project on whitelabeled domain
-        this.visId = "75549"; // this needs to be some chart visualization NOT table!!!
+        this.visId = "75548"; // this needs to be some chart visualization NOT table!!!
         // TODO once domain where this app is deployed is enabled for CORS on whitelabeled domain remove any PROXY settings
     }
 
@@ -24,13 +24,13 @@ class App extends Component {
                         <ExampleWithExport>
                             {onExportReady => (
                                 <div style={{ width: 600, height: 800 }}>
-                                    <Visualization
+                                    {/* <Visualization
                                         projectId={this.projectId}
                                         uri={`/gdc/md/${this.projectId}/obj/${this.visId}`}
                                         sdk={this.sdk}
                                         onExportReady={onExportReady}
-                                    />
-                                    {/* <PivotTable
+                                    /> */}
+                                    <PivotTable
                                         measures={[
                                             Model.measure("aagJGHg1bxap")
                                                 .localIdentifier("m_1")
@@ -49,7 +49,7 @@ class App extends Component {
                                         projectId={this.projectId}
                                         sdk={this.sdk}
                                         onExportReady={onExportReady}
-                                    /> */}
+                                    />
                                 </div>
                             )}
                         </ExampleWithExport>
